@@ -1,2 +1,2 @@
 # express-template
-My custom Express template for NodeJS servers.
+Custom Express template for NodeJS servers.
