@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "a1524552-883d-45b6-ba44-f7ae0907399e",
+		"name": "express-template",
+		"description": "Simple Postman collection to test the Express template for NodeJS servers.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{users}}",
+					"host": [
+						"{{users}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"test\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "{{users}}",
+					"host": [
+						"{{users}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT users",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"test\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "{{users}}",
+					"host": [
+						"{{users}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE users",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"test\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "{{users}}",
+					"host": [
+						"{{users}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "d4357858-f046-49b4-9bed-2d473dbdc97a",
+			"key": "users",
+			"value": "localhost:3000/users/",
+			"type": "string"
+		}
+	]
+}
