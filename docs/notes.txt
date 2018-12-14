@@ -1,0 +1,51 @@
+TEMPLATE ENGINES
+
+Template engines are useful when rendering HTML to a client application, and only in this case. The default template engine is 'jade', and the views folder is './views/'. The template engine should be set to 'pug' if it's going to be used, since Pug is the continuation of Jade and has the latest features.
+Use template engines with the 'res.render()' function.
+
+ENVIRONMENT SETTINGS
+
+To use '.env' settings, a loader is required. The simplest seems to be 'dotenv', and it's used as shown in the code.
+
+MIDDLEWARE
+
+	Primordial:
+
+		- 'morgan' to log all HTTP requests. Can use predefined patterns, 'tiny' being the most useful: 
+
+			:method :url :status :res[content-length] - :response-time ms
+
+			'morgan' makes 'response-time' unnecessary, as it also displays the response time.
+		- 'helmet' is a must to set the headers of response headers in a secure way.
+		- 'serve-static' to serve static files to clients.
+		- 'cors' for Cross Origin Resource Sharing. Basically the ability to interact with APIs outside of the origin domain. The origin is defined by the 'GET /' request.
+		- 'body-parser' is very important to process the body of POST HTTP requests. 
+		Important:
+			- 'urlencoded' to process data coming from urlencoded forms. The 'extended' option allows a richer encoding (with more variety of characters), but is deprecated and should be set to 'false'. Probably it's deprecated because it has no use.
+			- 'json' to process JSON data.
+			- 'text' idem
+		- 'timeout' sets a time limit for responses in HTTP requests. 
+
+	Optional:
+
+		- 'compression' compresses the body of responses. Interesting for applications that respond with streams of data.
+		- 'reponse-time' sets a header named 'X-Response-Time' in the response object. The “response time” is defined as the elapsed time from when a request enters this middleware to when the headers are written out to the client. This middleware should be the first in the stack, to account for the delay of all middleware. Made unnecessary by 'morgan'.
+		- 'csurf' to protect against Cross Site Request Forgery attacks.
+		- 'passport' for authentication using “strategies” such as OAuth, OpenID and many others. 
+
+ERROR HANDLER
+
+As of Express 5, errors inside async/await code is propagated adequately to the error handlers. This is nice as it removes need for 'express-async-handler'.
+Custom error handling is achieved with an error handler at the end of the middleware stack, after the route handlers. The custom error handler overrides the default, which simply prints the stack trace to 'stderr'.
+
+HOT RELOAD
+
+The module 'nodemon' reloads the server when code changes. To use it, install in the project:
+
+	yarn add nodemon | npm i nodemon
+	
+Then start the app with:
+
+	nodemon app.js
+
+No need to require the module inside the code.

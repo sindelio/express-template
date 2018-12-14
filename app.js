@@ -12,15 +12,24 @@ require('dotenv').load();
 console.log(`NODE_ENV=${process.env.NODE_ENV}`);
 
 // Importing middleware
-// const bodyParser = require('body-parser'); 
+const morgan = require('morgan');
 const helmet = require('helmet');
-// const compression = require('compression');
+const serveStatic = require('serve-static');
+const cors = require('cors');
+const bodyParser = require('body-parser'); 
+const timeout = require('connect-timeout');
 const errorHandler = require('./middleware/error-handler');
 
 // Setting middleware (order matters)
-app.use(helmet());
-app.use(express.static(path.join(__dirname, 'public')));
-// app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(morgan('tiny')); // Minimal logging output. First to account for all middleware delays
+app.use(helmet()); // Sets response headers securely
+app.use(serveStatic(path.join(__dirname, 'public'))); // Static files serving
+app.use(cors()); // Cross Origin Resource Sharing
+app.use(bodyParser.urlencoded({ extended: false })); // form urlencoded data
+app.use(bodyParser.text()); // text data
+app.use(bodyParser.json()); // json data
+app.use(timeout('5s')); // Timeout for HTTP requests
 
 // Routing 
 const usersRouter = require('./routes/users');
@@ -34,8 +43,7 @@ app.listen(process.env.PORT || 3000, () => {
 	console.log('Server is listening on port 3000!');
 });
 
-/* TODO:
-		- Read about more useful middleware
-		- Look into Max code
+/* TODO:		
 		- Research other templates in GitHub
+		- Hot reload
  */
