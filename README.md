@@ -13,13 +13,13 @@ Custom Express template for NodeJS servers.
 - Select middleware
   - 'morgan' HTTP requests logger
   - 'helmet' to set response headers securely
-	- 'serve-static' to serve public files
-	- 'cors' for Cross Origin Resource Sharing
-	- 'body-parser' to process request bodies
-	- 'timeout' to signal timeout in HTTP requests
-	- Listing of optional middleware in the docs
+  - 'serve-static' to serve public files
+  - 'cors' for Cross Origin Resource Sharing
+  - 'body-parser' to process request bodies
+  - 'timeout' to signal timeout in HTTP requests
+  - Listing of optional middleware in the docs
 
 
 ## License
 
-[]()
+[Do What The F*ck You Want To Public License](https://github.com/sindelio/express-template/blob/master/LICENSE)
