@@ -4,21 +4,30 @@ Custom Express template for NodeJS servers.
 
 ## Features
 
-- Pug template engine to render HTML
-- Environment settings loaded with 'dotenv'
-- Hot reload with 'nodemon'
-- Postman request collection
+- **Pug** template engine to render HTML
+- Environment settings loaded with **dotenv**
+- Hot reload with **nodemon**
+- **Postman** request collection
 - Custom error handling with support for async/await
 - Documentation on why/how each piece works
-- Select middleware
-  - 'morgan' HTTP requests logger
-  - 'helmet' to set response headers securely
-  - 'serve-static' to serve public files
-  - 'cors' for Cross Origin Resource Sharing
-  - 'body-parser' to process request bodies
-  - 'timeout' to signal timeout in HTTP requests
+- Select middleware:
+  - **morgan** HTTP requests logger
+  - **helmet** to set response headers securely
+  - **serve-static** to serve public files
+  - **cors** for Cross Origin Resource Sharing
+  - **body-parser** to process request bodies
+  - **timeout** to signal timeout in HTTP requests
   - Listing of optional middleware in the docs
 
+## Future development
+
+- Add healthchecks for readiness and liveness
+- Add a better stack tracer
+- Create a private API to registered users only, with JWT
+
+## Contributions
+
+Any comments and contributions are much welcome!
 
 ## License
 
