@@ -7,7 +7,7 @@ Custom Express template for NodeJS servers.
 - **Pug** template engine to render HTML
 - Environment settings loaded with **dotenv**
 - Hot reload with **nodemon**
-- **Postman** request collection
+- **Postman** HTTP request collection
 - Custom error handling with support for async/await
 - Documentation on why/how each piece works
 - Select middleware:
