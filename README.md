@@ -26,6 +26,8 @@ Custom Express template for NodeJS servers.
 - Add a better stack tracer
 - Create a private HTTP API for registered users only, with **jsonwebtoken**
 - Experiment with **passport**
+- Caching mechanisms
+- Performance tuning
 
 ## Contributions
 
