@@ -21,6 +21,7 @@ Custom Express template for NodeJS servers.
 
 ## Future development
 
+- Implement more detailed error handling (see GDPR project)
 - Add healthchecks for readiness and liveness
 - Add a better stack tracer
 - Create a private API to registered users only, with JWT
